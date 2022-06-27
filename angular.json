@@ -3,6 +3,16 @@
   "version": 2,
   "projects": {
     "angular": "apps/angular",
-    "angular-e2e": "apps/angular-e2e"
+    "angular-e2e": "apps/angular-e2e",
+    "auth": "libs/auth",
+    "basics": "libs/basics",
+    "change-detection": "libs/change-detection",
+    "dependency-injection": "libs/dependency-injection",
+    "ng-zone": "libs/ng-zone",
+    "rxjs": "libs/rxjs",
+    "scam": "libs/scam",
+    "smart-dumb": "libs/smart-dumb",
+    "state": "libs/state",
+    "view-encapsulation": "libs/view-encapsulation"
   }
 }

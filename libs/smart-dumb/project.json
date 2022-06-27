@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/smart-dumb/src",
+  "prefix": "ng-peaqock",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/smart-dumb"],
+      "options": {
+        "jestConfig": "libs/smart-dumb/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/smart-dumb/**/*.ts",
+          "libs/smart-dumb/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

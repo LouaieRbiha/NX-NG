@@ -14,7 +14,20 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ng-peaqock/auth": ["libs/auth/src/index.ts"],
+      "@ng-peaqock/basics": ["libs/basics/src/index.ts"],
+      "@ng-peaqock/change-detection": ["libs/change-detection/src/index.ts"],
+      "@ng-peaqock/dependency-injection": [
+        "libs/dependency-injection/src/index.ts"
+      ],
+      "@ng-peaqock/ng-zone": ["libs/ng-zone/src/index.ts"],
+      "@ng-peaqock/rxjs": ["libs/rxjs/src/index.ts"],
+      "@ng-peaqock/scam": ["libs/scam/src/index.ts"],
+      "@ng-peaqock/smart-dumb": ["libs/smart-dumb/src/index.ts"],
+      "@ng-peaqock/state": ["libs/state/src/index.ts"],
+      "@ng-peaqock/view-encapsulation": ["libs/view-encapsulation/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

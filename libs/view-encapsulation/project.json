@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/view-encapsulation/src",
+  "prefix": "ng-peaqock",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/view-encapsulation"],
+      "options": {
+        "jestConfig": "libs/view-encapsulation/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/view-encapsulation/**/*.ts",
+          "libs/view-encapsulation/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
