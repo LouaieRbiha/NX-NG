@@ -1,1 +1,32 @@
-<p>basic-structural works!</p>
+<!--begin NgIf directive-->
+<section>
+  <div *ngIf="isSelected; else notSelectedTemplate">NgIf Section</div>
+
+  <ng-template #notSelectedTemplate>
+    <section>NgElse Section</section>
+  </ng-template>
+</section>
+<!--end NgIf directive-->
+
+<!--begin Switch directive-->
+<section>
+  <div [ngSwitch]="switch_expression">
+    <p *ngSwitchCase="'expression1'">Switch Expression 1</p>
+    <p *ngSwitchCase="'expression2'">Switch Expression 2</p>
+
+    <p *ngSwitchDefault>Switch Default expression</p>
+  </div>
+</section>
+<!--end Switch directive-->
+
+<!--begin NgForOf directive-->
+<section>
+  <p *ngFor="let item of items; let odd = odd; trackBy: trackById" [class.odd]="odd">{{ item.name }}</p>
+
+  <br />
+
+  <button (click)="assignSameItems()">Assign same items</button>
+  &nbsp;
+  <button (click)="assignDifferentItems()">Assign different items</button>
+</section>
+<!--end NgForOf directive-->

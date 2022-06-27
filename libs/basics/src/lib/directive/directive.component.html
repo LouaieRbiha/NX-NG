@@ -1,1 +1,16 @@
 <p>directive works!</p>
+
+<main>
+  <h1>Structural directives</h1>
+  <section *ngPeaqockHideAfter="5000 as time; then placeholder; let counter = counter" class="banner primary">
+    <h2>Temporary content</h2>
+    <p>This layout will be shown for {{ time }} seconds. It will disappear in {{ counter }}.</p>
+  </section>
+
+  <ng-template #placeholder let-default>
+    <section class="banner secondary">
+      <h2>Placeholder content</h2>
+      <p>This layout is appeared after {{ default }} seconds.</p>
+    </section>
+  </ng-template>
+</main>

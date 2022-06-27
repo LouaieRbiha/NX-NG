@@ -1,10 +1,10 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[ngPeaqockCustomAttribute]'
+  selector: '[ngPeaqockCustomAttribute]',
 })
 export class CustomAttributeDirective {
-
-  constructor() { }
-
+  constructor(el: ElementRef) {
+    el.nativeElement.style.backgroundColor = 'yellow';
+  }
 }

@@ -5,11 +5,11 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    component: AppComponent,
   },
   {
     path: 'auth',
-    loadChildren: () => import('@ng-peaqock/auth').then(m => m.AuthModule)
+    loadChildren: () => import('@ng-peaqock/auth').then(m => m.AuthModule),
   },
   {
     path: 'basics',
@@ -41,7 +41,11 @@ const routes: Routes = [
   },
   {
     path: 'state',
-    loadChildren: () => import('@ng-peaqock/state').then(m => m.StateModule)
+    loadChildren: () => import('@ng-peaqock/state').then(m => m.StateModule),
+  },
+  {
+    path: 'testing',
+    loadChildren: () => import('@ng-peaqock/testing').then(m => m.TestingModule),
   },
   {
     path: 'view-encapsulation',
@@ -50,12 +54,12 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: '/',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

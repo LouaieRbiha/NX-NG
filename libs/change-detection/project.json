@@ -14,10 +14,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "libs/change-detection/**/*.ts",
-          "libs/change-detection/**/*.html"
-        ]
+        "lintFilePatterns": ["libs/change-detection/**/*.ts", "libs/change-detection/**/*.html"]
       }
     }
   },

@@ -13,6 +13,7 @@
     "scam": "libs/scam",
     "smart-dumb": "libs/smart-dumb",
     "state": "libs/state",
+    "testing": "libs/testing",
     "view-encapsulation": "libs/view-encapsulation"
   }
 }
