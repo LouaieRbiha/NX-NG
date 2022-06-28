@@ -1,0 +1,35 @@
+<div [class]="'container'">
+  <div [class]="'grid'">
+    <section [class]="'flex container-info'" *ngFor="let character of characters">
+      <div class="image-container">
+        <img
+          [ngStyle]="character.status === 'Dead' ? { filter: 'grayscale(90%) blur(2px)' } : { filter: 'unset' }"
+          [src]="character.image"
+          [alt]="character.name"
+        />
+      </div>
+
+      <div [class]="'character-info'">
+        <a [href]="character.url" [class]="'name-info'" [target]="'_blank'">{{ character.name }}</a>
+
+        <span [class]="'status'">
+          <span
+            [class]="'status-info'"
+            [ngClass]="{ alive: character.status === 'Alive', dead: character.status === 'Dead', unknown: character.status === 'unknown' }"
+          ></span>
+          {{ character.status }} - {{ character.species }}
+        </span>
+
+        <div [class]="'location'">
+          <p [style]="'color: rgb(158, 158, 158)'">last known location:</p>
+          <a [class]="'location-info'" [href]="character.location.url" [target]="'_blank'">{{ character.location.name }}</a>
+        </div>
+
+        <div [class]="'location'">
+          <p [style]="'color: rgb(158, 158, 158)'">First seen in:</p>
+          <a [class]="'location-info'" [href]="character.origin.url" [target]="'_blank'">{{ character.origin.name }}</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

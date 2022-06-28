@@ -1,0 +1,128 @@
+.container {
+  background-color: rgb(32, 35, 41);
+
+  ::selection {
+    background: rgb(32, 35, 41);
+    color: rgb(255, 152, 0);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-row-gap: 2px;
+  grid-column-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(min(30rem, 100%), 1fr));
+  width: 65%;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+
+  .image-container {
+    width: 35%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.container-info {
+  background: rgb(60, 62, 68) none repeat scroll 0% 0%;
+  color: whitesmoke;
+  min-height: 200px;
+}
+
+.character-info {
+  width: 60%;
+  padding: 20px 2%;
+}
+
+.name-info {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.status {
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.status-info {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.375rem;
+  border-radius: 50%;
+
+  &.alive {
+    background: rgb(0, 255, 0);
+  }
+
+  &.dead {
+    background: rgb(214, 61, 46);
+  }
+
+  &.unknown {
+    background: rgb(158, 158, 158);
+  }
+}
+
+.location {
+  margin-bottom: 15px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.location-info {
+  font-size: 0.875rem;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.name-info:hover,
+.location-info:hover {
+  color: rgb(255, 152, 0);
+}
+
+@media only screen and (max-width: 766px) {
+  .flex {
+    flex-direction: column;
+    .image-container {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 300px;
+        transform: scale(1.5);
+        transition: all ease-in-out 0.5s;
+        &:hover {
+          transform: scale(1);
+        }
+      }
+    }
+
+    .character-info {
+      width: 90%;
+      padding: 20px 2%;
+    }
+  }
+}

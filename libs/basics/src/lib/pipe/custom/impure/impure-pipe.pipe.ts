@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'impurePipe'
+  name: 'impureReverse',
+  pure: false,
 })
 export class ImpurePipePipe implements PipeTransform {
+  transform(text: string): unknown {
+    console.log('impure pipe called');
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+    return text.split('').reverse().join('');
   }
-
 }

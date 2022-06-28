@@ -8,6 +8,10 @@ import { BasicStructuralComponent } from './directive/structural/basic/basic-str
 import { HideAfterDirective } from './directive/structural/custom/hide-after.directive';
 import { BasicAttributeComponent } from './directive/attribute/basic/basic-attribute.component';
 import { CustomAttributeComponent } from './directive/attribute/custom/custom-attribute.component';
+import { BasicPipeComponent } from './pipe/basic/basic-pipe.component';
+import { PurePipeComponent } from './pipe/custom/pure/pure-pipe.component';
+import { ImpurePipeComponent } from './pipe/custom/impure/impure-pipe.component';
+import { ServiceComponent } from './service/service.component';
 
 const formRoutes: Routes = [
   {
@@ -20,6 +24,18 @@ const pipeRoutes: Routes = [
   {
     path: 'pipe',
     component: PipeComponent,
+  },
+  {
+    path: 'pipe/basic',
+    component: BasicPipeComponent,
+  },
+  {
+    path: 'pipe/custom/pure',
+    component: PurePipeComponent,
+  },
+  {
+    path: 'pipe/custom/impure',
+    component: ImpurePipeComponent,
   },
 ];
 
@@ -48,6 +64,13 @@ const directiveRoutes: Routes = [
   },
 ];
 
+const serviceRoutes: Routes = [
+  {
+    path: 'service',
+    component: ServiceComponent,
+  },
+];
+
 const routes: Routes = [
   {
     path: '',
@@ -56,6 +79,7 @@ const routes: Routes = [
   ...directiveRoutes,
   ...formRoutes,
   ...pipeRoutes,
+  ...serviceRoutes,
 ];
 
 @NgModule({

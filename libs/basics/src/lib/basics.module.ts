@@ -16,6 +16,9 @@ import { TemplateDrivenComponent } from './form/template-driven/template-driven.
 import { BasicsRoutingModule } from './basics-routing.module';
 import { HideAfterDirective } from './directive/structural/custom/hide-after.directive';
 import { CustomAttributeComponent } from './directive/attribute/custom/custom-attribute.component';
+import { PurePipeComponent } from './pipe/custom/pure/pure-pipe.component';
+import { ImpurePipeComponent } from './pipe/custom/impure/impure-pipe.component';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   imports: [CommonModule, BasicsRoutingModule],
@@ -35,6 +38,9 @@ import { CustomAttributeComponent } from './directive/attribute/custom/custom-at
     TemplateDrivenComponent,
     HideAfterDirective,
     CustomAttributeComponent,
+    PurePipeComponent,
+    ImpurePipeComponent,
+    ServiceComponent,
   ],
 })
 export class BasicsModule {}
