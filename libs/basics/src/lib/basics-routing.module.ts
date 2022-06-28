@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DirectiveComponent } from './directive/directive.component';
-import { FormComponent } from './form/form.component';
 import { BasicsComponent } from './basics.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { BasicStructuralComponent } from './directive/structural/basic/basic-structural.component';
@@ -12,11 +11,17 @@ import { BasicPipeComponent } from './pipe/basic/basic-pipe.component';
 import { PurePipeComponent } from './pipe/custom/pure/pure-pipe.component';
 import { ImpurePipeComponent } from './pipe/custom/impure/impure-pipe.component';
 import { ServiceComponent } from './service/service.component';
+import { TemplateDrivenComponent } from './form/template-driven/template-driven.component';
+import { ReactiveComponent } from './form/reactive/reactive.component';
 
 const formRoutes: Routes = [
   {
-    path: 'form',
-    component: FormComponent,
+    path: 'form/template-driven',
+    component: TemplateDrivenComponent,
+  },
+  {
+    path: 'form/reactive',
+    component: ReactiveComponent,
   },
 ];
 

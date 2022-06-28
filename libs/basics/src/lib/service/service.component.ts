@@ -30,6 +30,9 @@ export class ServiceComponent implements OnInit {
   constructor(private _rickAndMortyService: RickAndMortyService) {}
 
   ngOnInit(): void {
-    this._rickAndMortyService.getCharacters().subscribe(res => (this.characters = res));
+    this._rickAndMortyService.getCharacters().subscribe(res => {
+      this.characters = res;
+      console.log('this.characters', this.characters);
+    });
   }
 }

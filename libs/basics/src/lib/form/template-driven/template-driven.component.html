@@ -1,1 +1,93 @@
-<p>template-driven works!</p>
+<section>
+  <div class="container mt-5 mb-5">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="firstName">First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            ngModel
+            name="firstName"
+            #firstName="ngModel"
+            placeholder="First name"
+            required
+          />
+          <div *ngIf="firstName?.touched && firstName?.invalid" class="invalid-feedback">Please choose a first name.</div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="lastName">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            ngModel
+            name="lastName"
+            #lastName="ngModel"
+            placeholder="Last name"
+            required
+          />
+          <div *ngIf="lastName?.touched && lastName?.invalid" class="invalid-feedback">Please choose a last name.</div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="username">Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              ngModel
+              name="username"
+              #username="ngModel"
+              placeholder="Username"
+              aria-describedby="inputGroupPrepend"
+              required
+            />
+            <div *ngIf="username?.touched && username?.invalid" class="invalid-feedback">Please choose a username.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row" ngModelGroup="address">
+        <div class="col-md-3 mb-3">
+          <label for="street">Street</label>
+          <input type="text" class="form-control" id="street" ngModel name="street" #street="ngModel" placeholder="Street" required />
+          <div class="invalid-feedback" *ngIf="street?.touched && street?.invalid">Please provide a valid street.</div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label for="suburb">Suburb</label>
+          <input type="text" class="form-control" id="suburb" ngModel name="suburb" #suburb="ngModel" placeholder="State" required />
+          <div class="invalid-feedback" *ngIf="suburb?.touched && suburb?.invalid">Please provide a valid suburb.</div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label for="suburb">City</label>
+          <input type="text" class="form-control" id="city" ngModel name="city" #city="ngModel" placeholder="State" required />
+          <div class="invalid-feedback" *ngIf="city?.touched && city?.invalid">Please provide a valid city.</div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label for="suburb">Zipcode</label>
+          <input type="text" class="form-control" id="zipcode" ngModel name="zipcode" #zipcode="ngModel" placeholder="State" required />
+          <div class="invalid-feedback" *ngIf="zipcode?.touched && zipcode?.invalid">Please provide a valid zipcode.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="terms" ngModel name="terms" #terms="ngModel" value="" required />
+          <label class="form-check-label" for="terms"> Agree to terms and conditions </label>
+          <div *ngIf="terms?.touched && terms?.invalid" class="invalid-feedback">You must agree before submitting.</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Sign Up</button>
+    </form>
+  </div>
+</section>

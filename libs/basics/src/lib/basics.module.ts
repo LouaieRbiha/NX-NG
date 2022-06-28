@@ -19,9 +19,10 @@ import { CustomAttributeComponent } from './directive/attribute/custom/custom-at
 import { PurePipeComponent } from './pipe/custom/pure/pure-pipe.component';
 import { ImpurePipeComponent } from './pipe/custom/impure/impure-pipe.component';
 import { ServiceComponent } from './service/service.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, BasicsRoutingModule],
+  imports: [CommonModule, BasicsRoutingModule, FormsModule, ReactiveFormsModule],
   declarations: [
     BasicsComponent,
     DirectiveComponent,
