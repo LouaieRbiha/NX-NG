@@ -18,10 +18,12 @@ const formRoutes: Routes = [
   {
     path: 'form/template-driven',
     component: TemplateDrivenComponent,
+    title: 'Template Driven Form',
   },
   {
     path: 'form/reactive',
     component: ReactiveComponent,
+    title: 'Reactive Form',
   },
 ];
 
@@ -29,18 +31,22 @@ const pipeRoutes: Routes = [
   {
     path: 'pipe',
     component: PipeComponent,
+    title: 'Pipes',
   },
   {
     path: 'pipe/basic',
     component: BasicPipeComponent,
+    title: 'Basic Pipes',
   },
   {
     path: 'pipe/custom/pure',
     component: PurePipeComponent,
+    title: 'Pure Pipe',
   },
   {
     path: 'pipe/custom/impure',
     component: ImpurePipeComponent,
+    title: 'Impure Pipe',
   },
 ];
 
@@ -48,24 +54,29 @@ const directiveRoutes: Routes = [
   {
     path: 'directive',
     component: DirectiveComponent,
+    title: 'Directives',
   },
 
   {
     path: 'directive/attribute/basic',
     component: BasicAttributeComponent,
+    title: 'Basic Attribute Directive',
   },
   {
     path: 'directive/attribute/custom',
     component: CustomAttributeComponent,
+    title: 'Custom Attribute Directive',
   },
 
   {
     path: 'directive/structural/basic',
     component: BasicStructuralComponent,
+    title: 'Basic Structural Directive',
   },
   {
     path: 'directive/structural/custom',
     component: HideAfterDirective,
+    title: 'Custom Structural Directive',
   },
 ];
 
@@ -73,6 +84,7 @@ const serviceRoutes: Routes = [
   {
     path: 'service',
     component: ServiceComponent,
+    title: 'Service',
   },
 ];
 

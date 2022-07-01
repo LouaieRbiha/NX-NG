@@ -1,1 +1,1 @@
-export * from './lib/scam.module';
+export * from './lib/scam/scam.component';

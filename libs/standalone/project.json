@@ -1,0 +1,22 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/standalone/src",
+  "prefix": "ng-peaqock",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/standalone"],
+      "options": {
+        "jestConfig": "libs/standalone/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/standalone/**/*.ts", "libs/standalone/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

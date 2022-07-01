@@ -1,11 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { Routes } from '@angular/router';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    loadComponent: () => import('./app.component').then(m => m.AppComponent),
   },
   {
     path: 'auth',
@@ -39,13 +37,18 @@ const routes: Routes = [
   },
   {
     path: 'scam',
-    loadChildren: () => import('@ng-peaqock/scam').then(m => m.ScamModule),
+    loadChildren: () => import('@ng-peaqock/scam').then(m => m.ScamComponentModule),
     title: 'Scam',
   },
   {
     path: 'smart-dumb',
     loadChildren: () => import('@ng-peaqock/smart-dumb').then(m => m.SmartDumbModule),
     title: 'Smart Dumb',
+  },
+  {
+    path: 'standalone',
+    loadComponent: () => import('@ng-peaqock/standalone').then(m => m.StandaloneComponent),
+    title: 'Standalone',
   },
   {
     path: 'state',
@@ -68,9 +71,3 @@ const routes: Routes = [
     pathMatch: 'full',
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}

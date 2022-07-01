@@ -23,6 +23,7 @@
       "@ng-peaqock/rxjs": ["libs/rxjs/src/index.ts"],
       "@ng-peaqock/scam": ["libs/scam/src/index.ts"],
       "@ng-peaqock/smart-dumb": ["libs/smart-dumb/src/index.ts"],
+      "@ng-peaqock/standalone": ["libs/standalone/src/index.ts"],
       "@ng-peaqock/state": ["libs/state/src/index.ts"],
       "@ng-peaqock/testing": ["libs/testing/src/index.ts"],
       "@ng-peaqock/view-encapsulation": ["libs/view-encapsulation/src/index.ts"]

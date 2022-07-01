@@ -12,6 +12,7 @@
     "rxjs": "libs/rxjs",
     "scam": "libs/scam",
     "smart-dumb": "libs/smart-dumb",
+    "standalone": "libs/standalone",
     "state": "libs/state",
     "testing": "libs/testing",
     "view-encapsulation": "libs/view-encapsulation"

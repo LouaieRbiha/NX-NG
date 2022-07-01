@@ -1,0 +1,28 @@
+<section>
+  <p>{{ name }}</p>
+  <input type="text" value="{{ name }}" />
+  <input type="text" [value]="name" />
+
+  <p>value : {{ name }}</p>
+</section>
+
+<section>
+  <button disabled="{{ isStandalone }}">button</button>
+</section>
+
+<section>
+  <p (click)="bindingClicked($event)">Binding</p>
+</section>
+
+<section>
+  <input type="text" [(ngModel)]="name" />
+  <p>value : {{ name }}</p>
+</section>
+
+<section>
+  <input type="number" [(ngModel)]="fontSizePx" />
+  <div [style.font-size.px]="fontSizePx">Resizable Text</div>
+
+  <ng-peaqock-child-standalone [(size)]="fontSizePx"></ng-peaqock-child-standalone>
+  <ng-peaqock-child-standalone [size]="fontSizePx" (sizeChange)="fontSizePx = $event"></ng-peaqock-child-standalone>
+</section>
