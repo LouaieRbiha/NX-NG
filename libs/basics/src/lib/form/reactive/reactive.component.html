@@ -64,9 +64,40 @@
         <input type="text" class="form-control" formControlName="country" />
       </div>
     </div>
+    <br />
+
+    <div formArrayName="modules">
+      <div class="row" *ngFor="let module of modules.controls; let i = index" [formGroupName]="i">
+        <div class="col-md-4">
+          <input type="text" class="form-control" formControlName="feature" placeholder="Feature name" />
+        </div>
+
+        <div class="col-md-4">
+          <input type="text" class="form-control" formControlName="plan" placeholder="Plan" />
+        </div>
+
+        <div class="col-md-3">
+          <input type="text" class="form-control" formControlName="price" placeholder="Price" />
+        </div>
+
+        <div class="col col-md-1">
+          <button type="button" class="btn btn-secondary" (click)="removeModule(i)">remove</button>
+        </div>
+        <br /><br />
+      </div>
+      <br />
+    </div>
 
     <br />
 
-    <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Submit</button>
+    <div>
+      <button class="btn btn-primary" (click)="createModule()">New module</button>
+    </div>
+
+    <br />
+
+    <div class="flex">
+      <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Submit</button>
+    </div>
   </form>
 </section>

@@ -1,5 +1,6 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { AsyncValidatorFn, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AsyncValidatorFn, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, first, map, of, switchMap, timer } from 'rxjs';
 
 export interface IUserData {
@@ -16,9 +17,16 @@ export interface IAddressData {
   country: FormControl<string | null>;
 }
 
+export interface IModule {
+  feature: FormControl<string | null>;
+  plan: FormControl<string | null>;
+  price: FormControl<string | null>;
+}
+
 export interface IForm {
   userData: FormGroup<IUserData>;
   addressData: FormGroup<IAddressData>;
+  modules: FormArray<FormGroup<IModule>>;
 }
 
 @Component({
@@ -44,6 +52,8 @@ export class ReactiveComponent implements OnInit {
         state: new FormControl(null, Validators.required),
         country: new FormControl(null, Validators.required),
       }),
+
+      modules: new FormArray([this.createFormGroup()]),
     });
   }
 
@@ -66,6 +76,28 @@ export class ReactiveComponent implements OnInit {
         }),
         first(),
       );
+  }
+
+  private createFormGroup(): FormGroup {
+    return new FormGroup({
+      feature: new FormControl(null, Validators.required),
+      plan: new FormControl(null, Validators.required),
+      price: new FormControl(null, Validators.required),
+    });
+  }
+
+  createModule() {
+    const modules = this.signupForm.get('modules') as FormArray;
+    modules.push(this.createFormGroup());
+  }
+
+  removeModule(index: number) {
+    const modules = this.signupForm.get('modules') as FormArray;
+    modules.length > 1 ? modules.removeAt(index) : modules.reset();
+  }
+
+  get modules() {
+    return this.signupForm.get('modules') as FormArray;
   }
 
   onSubmit() {

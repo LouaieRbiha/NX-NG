@@ -15,6 +15,8 @@ export class StandaloneComponent {
   isStandalone = false;
   fontSizePx = 16;
 
+  type = typeof this.isStandalone;
+
   bindingClicked(event: MouseEvent) {
     console.log('event', event);
   }

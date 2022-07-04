@@ -1,6 +1,7 @@
 .characters-container {
   background-color: rgb(32, 35, 41);
-
+  height: auto;
+  min-height: 100vh;
   ::selection {
     background: rgb(32, 35, 41);
     color: rgb(255, 152, 0);
@@ -15,6 +16,7 @@
   width: 65%;
   margin: 0 auto;
   padding: 100px 0;
+  transition: all ease-in-out 0.6s;
 }
 
 .flex {
@@ -23,6 +25,7 @@
   padding: 0;
   justify-content: space-between;
   align-items: center;
+  transition: all ease-in-out 0.6s;
 
   .image-container {
     width: 35%;
